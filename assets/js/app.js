@@ -172,10 +172,10 @@ function buildUserSelectionForm (users) {
 
 
    /*
-    * Checks if user has a keyword string and seperates it into an
+    * Checks if user has a description string and seperates it into an
     + array with seperate keywords if that is the case
     */
-    if (typeof user.keywords !== 'undefined' && user.keywords !== null && user.keywords.trim() !== '') {
+    if (typeof user.description !== 'undefined' && user.description !== null && user.description.trim() !== '') {
      const keywordSeperator = document.createTextNode(" | ")
      wrapper.appendChild(keywordSeperator)
      const keywordArray = user.keywords.split(" ")
