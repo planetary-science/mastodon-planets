@@ -172,12 +172,13 @@ function buildUserSelectionForm (users) {
 
 
    /*
-    * Checks if user has a keyword string and seperates it into an
-    + array with seperate keywords if that is the case
+    * Add account description, if present
     */
     if (typeof user.keywords !== 'undefined' && user.keywords !== null && user.keywords.trim() !== '') {
-     const keywordSeperator = document.createTextNode(" | Keywords: ")
+     const keywordSeperator = document.createTextNode(" | ")
      wrapper.appendChild(keywordSeperator)
+     wrapper.appendChild(keywords)
+     /*
      const keywordArray = user.keywords.split(" ")
      // append keywords as <a> elements and seperate them by a comma
      for (i in keywordArray) {
@@ -193,6 +194,7 @@ function buildUserSelectionForm (users) {
        keyword_item.setAttribute('class', 'keywordclass')
        wrapper.appendChild(keyword_item)
      }
+    */
     }
 
     /*
