@@ -177,24 +177,8 @@ function buildUserSelectionForm (users) {
     if (typeof user.keywords !== 'undefined' && user.keywords !== null && user.keywords.trim() !== '') {
      const keywordSeperator = document.createTextNode(" | ")
      wrapper.appendChild(keywordSeperator)
-     wrapper.appendChild(keywords)
-     /*
-     const keywordArray = user.keywords.split(" ")
-     // append keywords as <a> elements and seperate them by a comma
-     for (i in keywordArray) {
-       if (i > 0) {
-         const commaSeperator = document.createTextNode(', ')
-         wrapper.appendChild(commaSeperator)
-       }
-       const keyword_item = document.createElement('a')
-       keyword_item.textContent = keywordArray[i].replaceAll("_", " ").toLowerCase()
-       keyword_item.setAttribute('selected', false)
-       keyword_item.setAttribute('name', keywordArray[i].toLowerCase())
-       keyword_item.setAttribute('onclick', 'selectedKeyword(this)')
-       keyword_item.setAttribute('class', 'keywordclass')
-       wrapper.appendChild(keyword_item)
-     }
-    */
+     const description = document.createTextNode(user.description)
+     wrapper.appendChild(description)
     }
 
     /*
