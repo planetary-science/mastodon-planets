@@ -174,7 +174,7 @@ function buildUserSelectionForm (users) {
    /*
     * Add account description, if present
     */
-    if (typeof user.keywords !== 'undefined' && user.keywords !== null && user.keywords.trim() !== '') {
+    if (typeof user.description !== 'undefined' && user.description !== null && user.description.trim() !== '') {
      const keywordSeperator = document.createTextNode(" | ")
      wrapper.appendChild(keywordSeperator)
      const description = document.createTextNode(user.description)
