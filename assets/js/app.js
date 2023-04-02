@@ -170,7 +170,6 @@ function buildUserSelectionForm (users) {
    wrapper.appendChild(bracketClose)
 
 
-
    /*
     * Add description string
     */
