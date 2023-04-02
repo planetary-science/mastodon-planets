@@ -172,8 +172,28 @@ function buildUserSelectionForm (users) {
 
 
    /*
-    * Add account description, if present
+    * Checks if user has a keyword string and seperates it into an
+    + array with seperate keywords if that is the case
     */
+    if (typeof user.keywords !== 'undefined' && user.keywords !== null && user.keywords.trim() !== '') {
+     const keywordSeperator = document.createTextNode(" | Keywords: ")
+     wrapper.appendChild(keywordSeperator)
+     const keywordArray = user.keywords.split(" ")
+     // append keywords as <a> elements and seperate them by a comma
+     for (i in keywordArray) {
+       if (i > 0) {
+         const commaSeperator = document.createTextNode(', ')
+         wrapper.appendChild(commaSeperator)
+       }
+       const keyword_item = document.createElement('a')
+       keyword_item.textContent = keywordArray[i].replaceAll("_", " ").toLowerCase()
+       keyword_item.setAttribute('selected', false)
+       keyword_item.setAttribute('name', keywordArray[i].toLowerCase())
+       keyword_item.setAttribute('onclick', 'selectedKeyword(this)')
+       keyword_item.setAttribute('class', 'keywordclass')
+       wrapper.appendChild(keyword_item)
+     }
+    }
 
     /*
      * Checks if user has a language string and seperates it into an
