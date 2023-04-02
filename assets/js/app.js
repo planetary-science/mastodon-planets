@@ -174,12 +174,6 @@ function buildUserSelectionForm (users) {
    /*
     * Add account description, if present
     */
-    if (typeof user.description !== 'undefined' && user.description !== null && user.description.trim() !== '') {
-     const keywordSeperator = document.createTextNode(" | ")
-     wrapper.appendChild(keywordSeperator)
-     const description = document.createTextNode(user.description)
-     wrapper.appendChild(description)
-    }
 
     /*
      * Checks if user has a language string and seperates it into an
